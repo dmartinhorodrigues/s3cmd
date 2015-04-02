@@ -5,8 +5,9 @@
 
 package "git-core"
 package "python-setuptools"
-# Newer versions of s3cmd require "dateutil"
+# Newer versions of s3cmd require "python-dateutil" and "python-magic". Check: https://github.com/s3tools/s3cmd/blob/master/setup.py#L105
 package "python-dateutil"
+package "python-magic"
 
 directory "#{node[:s3cmd][:install_prefix_root]}/share/s3cmd" do
   action :create
